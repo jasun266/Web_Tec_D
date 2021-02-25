@@ -1,17 +1,23 @@
 <?php
-	
-	if(isset($_POST['submit']))
-	{
-		$currentPass = $_POST['Cpassword'];
-		$newPass = $_POST['Npassword'];
-		$rePass = $_POST['Npassword'];
+	session_start();
 
-		if($currentPass === $newPass){
-			echo "New Password should not be same as the Current Password";
-		}
-		if($newPass != $rePass)){
-			echo "Your new password and Retype password should be same.";
-		}
+	if(isset($_POST['submit'])){
+
+		$Cpassword =$_POST['Cpassword'];
+		$Rpassword =$_POST['Rpassword'];
+		$Npasspord =$_POST['Npasspord'];
+
+			if($password == $repass){
+				$user = [
+							'password'	=>$password
+						];
+
+				$_SESSION['abc'] = $user;
+
+				header('location: login.html');
+			}else{
+				echo "password & re-type password mismatch...";
+			}
+		
 	}
-	
 ?>

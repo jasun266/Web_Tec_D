@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Profile Picture</title>
+	<title>Login Page</title>
 </head>
 <body>
 	<table border="4" width="90%">
@@ -21,26 +21,18 @@
 			<td colspan="2" align="left" width="30%">
 				<h2>Account</h2>
 				<ul><a href="logindas.html"><li>Dashboard</li></a>
-				<a href="login.html"><li>View Profile</li></a>
-				<a href="login.html"> <li>Edit Profile</li></a>
+				<a href="viewprofile.html"><li>View Profile</li></a>
+				<a href="editprofile.html"> <li>Edit Profile</li></a>
 				<a href="Profilepicture.html"><li>Change Profile Picture</li></a>
-				<a href="changepassword.html"> <li>Change Password</li></a>
+				<a href="Changepassword.html"> <li>Change Password</li></a>
 				<a href="login.html"><li> Logout </li></a></ul>
 			</td>
-			<td><fieldset style="width:800px">
-			<legend>Profile Picture</legend>
-				<table>
-				<tr>
-					<td><img src="user.png"width="200px" height="150px"></td>
-				</tr>
-				<tr>
-					<td><input type="file" name="image" value=""></td>
-				</tr>
-				<tr>
-					<td><input type="submit" name="submit" value="Submit"></td>
-				</tr>
-			</table>
-		</fieldset></td>
+			<td>
+			   Name: 				<?php  session_start(); $user = $_SESSION['abc']; echo $user['name'];?><br>
+			   Email:				<?php   echo $user['email'];?><br>
+			   Gender:				<?php   echo $user['gender'];?><br>
+			   Date of Birth:		<?php   echo $user['DOB'];?><br>
+			</td>
 		</tr>
 		<tr aline="center"r height="50px">
 					<td colspan="3" align="center">

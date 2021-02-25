@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	
 	if(isset($_POST['submit'])){
 
@@ -9,10 +10,15 @@
 			echo "Null submission";
 		}else{
 
-			if(strlen($username) <2 ||strlen($password) <8 ){
-				echo "worng Input";
+			$user = $_SESSION['abc'];
+
+			if($username == $user['username'] && $password == $user['password']){
+				
+				$_SESSION['status'] = true;
+				header('location: public_home.html');
+
 			}else{
-				echo "welcome...";
+				echo "invalid user...";
 			}
 		}
 	}
